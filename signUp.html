@@ -22,7 +22,6 @@
         <ul id="navigation-menu">
           <li><a href="genre.html" class="active">Genre</a></li>
           <li><a href="trending.html">Trending</a></li>
-          <li><a href="#">Profile</a></li>
           <li id="sign-up-menu-item"><a href="#">Sign Up</a></li>
         </ul>
       </div>
@@ -124,7 +123,33 @@
     </form>
     
     <div class="login-link">
-      Have an account? <a href="#">Log in</a>
+      Have an account? <a href="login.html">Log in</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="company">
+      <h1>Company</h1>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+        <li><a href="https://newsroom.spotify.com/">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="community">
+      <h1>Communities</h1>
+      <ul>
+        <li><a href="https://artists.spotify.com/home">For Creators</a></li>
+        <li><a href="https://developer.spotify.com/">Developers</a></li>
+      </ul>
+    </div>
+    <div class="connect">
+      <h1>Connect With Me</h1>
+      <ul>
+        <li><a href="https://www.instagram.com/nishchal.7.3/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com/Nishchal7310" target="_blank"><i class="bi bi-facebook"></i></a></li>
+      </ul>
     </div>
   </div>
 
@@ -141,159 +166,34 @@
       document.getElementById("success-message").style.display = "block";
 
       setTimeout(function() {
-        window.location.href = "profile.html";
+        window.location.href = "login.html";
       }, 2000);
     });
-  </script>
-  
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - Musicify</title>
-  <link rel="stylesheet" href="style.css    ">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
- </head>
-<body>
-  <div class="header">
-    <div class="left">
-      <div class="logo">
-        <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify"></a>
-      </div>
-      <div class="home">
-        <a href="index.html"><i class="bi bi-house"></i></a>
-      </div>
-    </div>
-    <div class="right">
-      <div class="nav">
-        <ul id="navigation-menu">
-          <li><a href="genre.html" class="active">Genre</a></li>
-          <li><a href="trending.html">Trending</a></li>
-          <li><a href="#">Profile</a></li>
-          <li id="sign-up-menu-item"><a href="#">Sign Up</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <div class="container">
-    <div class="success-message" id="success-message">
-      Sign up successful! Redirecting to homepage in <span id="countdown">5</span> seconds...
-    </div>
-    
-    <div class="logo">
-      <h1>Musicify</h1>
-    </div>
-    
-    <h2>Sign up for free to start listening</h2>
-    
-    <div class="social-signup">
-      <a href="#" class="btn btn-facebook">CONTINUE WITH FACEBOOK</a>
-      <a href="#" class="btn btn-google">CONTINUE WITH GOOGLE</a>
-      <a href="#" class="btn btn-apple">CONTINUE WITH APPLE</a>
-    </div>
-    
-    <div class="divider">
-      <span>OR</span>
-    </div>
-    
-    <form id="signup-form" action="#" method="post">
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="password">Create a password</label>
-        <input type="password" id="password" name="password" placeholder="Create a password" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="name">What should we call you?</label>
-        <input type="text" id="name" name="name" placeholder="Enter a profile name" required>
-      </div>
-      
-      <div class="form-group">
-        <label>Date of birth</label>
-        <div style="display: flex; gap: 10px;">
-          <input type="text" id="day" placeholder="DD" style="width: 20%;" required>
-          <select id="month" style="flex: 1; padding: 14px; border-radius: 4px; border: 1px solid #333; background-color: #212121; color: white;" required>
-            <option value="">Month</option>
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <input type="text" id="year" placeholder="YYYY" style="width: 30%;" required>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Gender</label>
-        <div style="display: flex; gap: 15px;">
-          <div class="checkbox-container">
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Male</label>
-          </div>
-          <div class="checkbox-container">
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-          </div>
-          <div class="checkbox-container">
-            <input type="radio" id="rice-cooker" name="gender" value="rice-cooker">
-            <label for="rice-cooker">Rice cooker</label>
-          </div>
-          <div class="checkbox-container">
-            <input type="radio" id="ok" name="gender" value="ok">
-            <label for="ok">Ok</label>
-          </div>
-        </div>
-      </div>
-      
-      <div class="checkbox-container">
-        <input type="checkbox" id="marketing" name="marketing">
-        <label for="marketing">Share my registration data with Musicify's content providers for marketing purposes.</label>
-      </div>
-      
-      <div class="terms">
-        By clicking on sign-up, you agree to Musicify's <a href="#">Terms and Conditions of Use</a>. To learn more about how Musicify collects, uses, shares and protects your personal data, please see <a href="#">Musicify's Privacy Policy</a>.
-      </div>
-      
-      <button type="submit" class="btn btn-signup">SIGN UP</button>
-    </form>
-    
-    <div class="login-link">
-      Have an account? <a href="#">Log in</a>
-    </div>
-  </div>
 
-  <script>
     document.getElementById("signup-form").addEventListener("submit", function(e) {
       e.preventDefault();
-
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-
+  
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+  
       localStorage.setItem("musicifyUserName", name);
       localStorage.setItem("musicifyUserEmail", email);
-
+      localStorage.setItem("musicifyUserPassword", password);
+  
       document.getElementById("success-message").style.display = "block";
 
-      setTimeout(function() {
-        window.location.href = "profile.html";
-      }, 2000);
+      let seconds = 5;
+      const countdownElement = document.getElementById("countdown");
+      const countdownInterval = setInterval(function() {
+        seconds--;
+        countdownElement.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(countdownInterval);
+          window.location.href = "login.html";
+        }
+      }, 1000);
     });
   </script>
-  
 </body>
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Musicify</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <div class="header">
+    <div class="left">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify">
+      </div>
+      <div class="home">
+        <a href="index.html"><i class="bi bi-house"></i></a>
+      </div>
+    </div>
+    <div class="right">
+      <div class="nav">
+        <ul id="navigation-menu">
+          <li><a href="genre.html">Genre</a></li>
+          <li><a href="trending.html">Trending</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="signUp.html">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="error-message" id="error-message"></div>
+
+    <div class="logo">
+      <h1>Musicify</h1>
+    </div>
+
+    <h2>Log in to your account</h2>
+
+    <div class="social-signup">
+      <a href="#" class="btn btn-facebook">CONTINUE WITH FACEBOOK</a>
+      <a href="#" class="btn btn-google">CONTINUE WITH GOOGLE</a>
+      <a href="#" class="btn btn-apple">CONTINUE WITH APPLE</a>
+    </div>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <form id="login-form" action="#" method="post">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <button type="submit" class="btn btn-signup">LOG IN</button>
+    </form>
+
+    <div class="login-link">
+      Don't have an account? <a href="signUp.html">Sign up</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="company">
+      <h1>Company</h1>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+        <li><a href="https://newsroom.spotify.com/">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="community">
+      <h1>Communities</h1>
+      <ul>
+        <li><a href="https://artists.spotify.com/home">For Creators</a></li>
+        <li><a href="https://developer.spotify.com/">Developers</a></li>
+      </ul>
+    </div>
+    <div class="connect">
+      <h1>Connect With Me</h1>
+      <ul>
+        <li><a href="https://www.instagram.com/nishchal.7.3/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com/Nishchal7310" target="_blank"><i class="bi bi-facebook"></i></a></li>
+      </ul>
+    </div>
+</div>
+
+  <script>
+    var storedEmail = localStorage.getItem("musicifyUserEmail");
+    var emailInput = document.getElementById("login-email");
+
+    if (storedEmail && emailInput) {
+      emailInput.value = storedEmail;
+    }
+
+    document.getElementById("login-form").onsubmit = function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+      const errorElement = document.getElementById("error-message");
+
+      const storedEmail = localStorage.getItem("musicifyUserEmail");
+      const storedPassword = localStorage.getItem("musicifyUserPassword");
+
+      if (!email || !password) {
+        errorElement.textContent = "Please fill in all fields";
+        errorElement.style.display = "block";
+        return;
+      }
+
+      if (email === storedEmail && password === storedPassword) {
+        window.location.href = "profile.html";
+      } else {
+        errorElement.textContent = "Invalid email or password";
+        errorElement.style.display = "block";
+      }
+    };
+  </script>
+</body>
+</html>
